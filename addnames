@@ -1,0 +1,29 @@
+#!/bin/bash
+file=$1
+name=$2
+if [ "$*" == "" ]
+then echo "enter the file name"
+elif [ -z "$2" ]
+then echo "enter the name"
+else
+flag="0"
+var=`cat $file`
+for i in $var; do
+        #echo $i
+	if [ "$name" == "$i" ]
+	then
+		echo "---------------------------"
+		echo "name is in the list"
+		flag="1"		 
+	fi
+done
+if [ $flag -eq "0" ]
+then
+	echo "---------------------------"
+	echo "the name is being added to end of the list"
+	echo $name | cat>>$file |echo "done"
+fi
+
+fi
+echo "---------------------------"
+grep --color=always -z $name $file
