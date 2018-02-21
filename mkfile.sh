@@ -6,3 +6,4 @@ touch "${FILE_NAME}.sh"
 echo "Please type commands and end with  ctrl+d"
 cat >> "${FILE_NAME}.sh"
 echo "all done ur file is created"
+chmod +x ${FILE_NAME}.sh
